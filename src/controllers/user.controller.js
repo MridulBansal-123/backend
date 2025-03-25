@@ -411,5 +411,5 @@ const updateUserCoverImage=asyncHandler(async(req,res)=>
   
   
 export {registerUser, loginUser, logoutUser,refreshAccessToken,updateUserAvatar,updateUserCoverImage
-  ,getUserChannelProfile,getWatchHistory
+  ,getUserChannelProfile,getWatchHistory,changeCurrentPassword,getCurrentUser,updateAccountDetails
 }
