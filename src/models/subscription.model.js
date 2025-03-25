@@ -1,4 +1,6 @@
 import mongoose, {Schema} from "mongoose"
+import { asyncHandler } from "../utils/asyncHandeller"
+import { updateUserCoverImage } from "../controllers/user.controller"
 const subscriptionSchema=new Schema({
     subscriber:{
         type:Schema.Types.ObjectId,
