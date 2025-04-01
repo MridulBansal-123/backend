@@ -139,8 +139,8 @@ const logoutUser=asyncHandler(
      await  User.findByIdAndUpdate(
         req.user._id,
         {
-          $set: {
-            refreshToken:undefined
+          $unset: {
+            refreshToken:1//this removes the field from the document
           }
         },
         {
@@ -365,7 +365,7 @@ const updateUserCoverImage=asyncHandler(async(req,res)=>
     const user =await User.aggregate([
       {
         $match:{
-          _id = new mongoose.Types.Objectid(req.user._id)
+          _id : new mongoose.Types.Objectid(req.user._id)
   
         }
       },
